@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toan tu ba ngoi</title>
+</head>
+<body>
+    <H1><button onclick="baiTap1()">Bai tap 1</button></H1>
+    <H1><button onclick="baiTap2()">Bai tap 2</button></H1>
+
+<script>
+    function baiTap1(){
+        let a = prompt("a: ");
+        let b = prompt("b: ");
+        let result = (a+b>4? 'Below' : 'Over');
+        alert(result);
+    }
+    function baiTap2(){
+        let login = prompt("Nhap ten dang nhap: ");
+        let message;
+        message = (login =='Employee')? 'Hello' : (login == 'Director')? 'Greeting' : (login == '') ? 'No login':'';
+        alert(message);
+    }
+</script>
+</body>
+</html>

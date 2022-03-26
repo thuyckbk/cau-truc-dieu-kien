@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-eqhiv="X-UA_Compartible" content="IE=egde">
+	<meta name="viewport" content="width=device, initial-scale=1.0">
+	<title> Tinh ngay trong thang </title>
+</head>
+<body>
+
+	<h1> Ban muon xem thang may </h1><br>
+	<input type="text" id="thang" ><br><br>
+	<input type="button" id="tinhSoNgay" value="Tinh So Ngay"><br>
+	<h2><div id="hienThi"></div></h2>
+	
+	<script>
+		let thang = document.getElementById('thang');
+		let tinhSoNgay = document.getElementById('tinhSoNgay');
+		tinhSoNgay.addEventListener('click', function (){
+			switch (thang.value){
+				case "1":
+				case "3":
+				case "5":
+				case "7":
+				case "8":
+				case "10":
+				case "12":
+					document.getElementById('hienThi').innerHTML = ("Thang "+ thang.value +" co 31 ngay")
+					break;
+				case "4":
+				case "6":
+				case "9":
+				case "11":
+					document.getElementById('hienThi').innerHTML = ("Thang "+ thang.value +" co 30 ngay")
+					break;
+				case "2":
+					document.getElementById('hienThi').innerHTML = ("Thang "+ thang.value +" co 28 ngay hoac 29 ngay")
+					break;
+			}
+		})
+	</script>
+	
+</body>
+</html>

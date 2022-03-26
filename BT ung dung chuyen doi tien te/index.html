@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-eqhiv="X-UA_Compartible" content="IE=egde">
+	<meta name="viewport" content="width=device, initial-scale=1.0">
+	<title> Ung dung chuyen doi tien te </title>
+	<style>
+		th, td{
+			width:200px;
+			height:30px;
+			text-align:center;
+		}
+		button{
+			width:100px; 
+			height:100%;
+			background:#236ef780;
+			border:1px #236ef7 solid;
+			}
+	</style>
+</head>
+<body>
+
+	<h1> Ung dung chuyen doi tien te </h1><br>
+	<table>
+		<tr>
+			<th>Amount </th>
+			<th>From Currency</th>
+			<th>To Currency</th>
+		</tr>
+		<tr>
+			<td><input type="text" id="amount" ></td>
+			<td>
+				<select id="from">
+					<option value="vnd">VietNam</option>
+					<option value="usd">USD My</option>
+					<option value="yen">NhatBan</option>
+					<option value="euro">Chau Au</option>
+				</select>
+			</td>
+			<td>
+				<select id="to">
+					<option value="vnd">VietNam</option>
+					<option value="usd">USD My</option>
+					<option value="yen">NhatBan</option>
+					<option value="euro">Chau Au</option>
+				</select>
+			</td>
+			<td><button id="convert">Convert</button></td>
+		</tr>
+	</table>
+	<br>
+	<h2><div id="hienThi"></div></h2>
+	
+	<script>
+		let amount = document.getElementById('amount');
+		let from = document.getElementById('from');
+		let to = document.getElementById('to');
+		let convert = document.getElementById('convert');
+		convert.addEventListener('click', function (){
+			let usd=23000;
+			let yen=200;
+			let euro=25120;
+
+			switch (from.value){
+			case 'vnd': 
+				switch (to.value){
+				case 'vnd':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value).toLocaleString("en") + ' VND');
+					break;
+				case 'usd':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value/usd).toLocaleString("en") + ' USD');
+					break;
+				case 'yen':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value/yen).toLocaleString("en") + ' YEN');
+					break;
+				case 'euro':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value/euro).toLocaleString("en") + ' EURO');
+					break;
+				}
+				break;
+			case 'usd': 
+				switch (to.value){
+				case 'vnd':
+					document.getElementById('hienThi').innerHTML = ('Result: '+' ' + Number(amount.value*usd).toLocaleString("en") + ' VND');
+					break;
+				case 'usd':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value).toLocaleString("en") + ' USD');
+					break;
+				case 'yen':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value/yen*usd).toLocaleString("en") + ' YEN');
+					break;
+				case 'euro':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value/euro*usd).toLocaleString("en") + ' EURO');
+					break;
+				}
+				break;
+			case 'yen': 
+				switch (to.value){
+				case 'vnd':
+					document.getElementById('hienThi').innerHTML = ('Result: '+' ' + Number(amount.value*yen).toLocaleString("en") + ' VND');
+					break;
+				case 'usd':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value/usd*yen).toLocaleString("en") + ' USD');
+					break;
+				case 'yen':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value).toLocaleString("en") + ' YEN');
+					break;
+				case 'euro':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value/euro*yen).toLocaleString("en") + ' EURO');
+					break;
+				}
+				break;
+			case 'euro': 
+				switch (to.value){
+				case 'vnd':
+					document.getElementById('hienThi').innerHTML = ('Result: '+' ' + Number(amount.value*euro).toLocaleString("en") + ' VND');
+					break;
+				case 'usd':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value/usd*euro).toLocaleString("en") + ' USD');
+					break;
+				case 'yen':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value/yen*euro).toLocaleString("en") + ' YEN');
+					break;
+				case 'euro':
+					document.getElementById('hienThi').innerHTML = ('Result: ' +' ' + Number(amount.value).toLocaleString("en") + ' EURO');
+					break;
+				}
+				break;
+			
+			}
+			
+		})
+	</script>
+	
+</body>
+</html>

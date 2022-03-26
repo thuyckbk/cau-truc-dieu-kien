@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-eqhiv="X-UA_Compartible" content="IE=egde">
+	<meta name="viewport" content="width=device, initial-scale=1.0">
+	<title> Tinh diem thi DH khoi D </title>
+</head>
+<body>
+	<h1>Tinh diem DH khoi D</h1>
+	<table>
+		<tr>
+			<td style="width:120px;"><h2>Mon Toan </h2></td>
+			<td><input type="text" id="toan" style="width:50px;"></td>
+		</tr>
+		<tr>
+			<td><h2>Mon Van</h2></td>
+			<td><input type="text" id="van" style="width:50px;"></td>
+		</tr>
+		<tr>
+			<td><h2>Mon Anh</h2></td>
+			<td><input type="text" id="anh" style="width:50px;"></td>
+		</tr>
+		<tr>
+			<td><h2>Khu Vuc</h2></td>
+			<td><select id="khuVuc">
+			<option id="KV1" value="kv1"> Khu vuc 1</option>
+			<option id="KV2" value="kv2"> Khu vuc 2</option>
+			<option id="KV2-NT" value="kv2nt"> Khu vuc 2 - nong thon</option>
+			<option id="KV3" value="kv3">khu vuc 3</option>
+		</select></td>
+		</tr>
+		<tr>
+			<td><h2></h2></td>
+			<td><input type="button" id="tinhDiem" value="Tinh Diem" onclick="tinhDiem()"></td>
+		</tr>
+
+	</table>
+	<!--<div><span>Mon Toan  </span><input type="text" id="toan" style="width:50px;"></div><br>
+	<div><span>Mon Van  </span><input type="text" id="van" style="width:50px;"></div><br>
+	<div><span>Mon Anh  </span><input type="text" id="anh" style="width:50px;"></div><br>
+	<div><span>Khu Vuc  </span>
+		<select id="khuVuc">
+			<option id="KV1" value="kv1"> Khu vuc 1</option>
+			<option id="KV2" value="kv2"> Khu vuc 2</option>
+			<option id="KV2-NT" value="kv2nt"> Khu vuc 2 - nong thon</option>
+			<option id="KV3" value="kv3">khu vuc 3</option>
+		</select>
+	</div><br>
+	<input type="button" id="tinhDiem" value="Tinh Diem" onclick="tinhDiem()">-->
+	<h1><div id="diem"></div></h1>
+	
+	<script>
+		let diemToan = document.getElementById('toan');
+		let diemVan = document.getElementById('van');
+		let diemAnh = document.getElementById('anh');
+		let khuVuc = document.getElementById('khuVuc');
+		function tinhDiem(){
+		if (diemToan.value*1<=10 && diemVan.value*1<=10 && diemAnh.value*1<=10){
+		let tongDiem = diemToan.value*1 + diemVan.value*1 + diemAnh.value*1;
+		switch (khuVuc.value) {
+			case "kv1":
+				tongDiem = tongDiem + 0.75;
+				document.getElementById('diem').innerHTML =('Tong diem DH khoi D cua ban la: ' + tongDiem);
+				break;
+			case "kv2":
+				tongDiem = tongDiem + 0.25;
+				document.getElementById('diem').innerHTML = ('Tong diem DH khoi D cua ban la: ' + tongDiem);
+				break;
+			case "kv2nt":
+				tongDiem = tongDiem + 0.5;
+				document.getElementById('diem').innerHTML = ('Tong diem DH khoi D cua ban la: ' + tongDiem);
+				break;
+			case "kv3":
+				document.getElementById('diem').innerHTML = ('Tong diem DH khoi D cua ban la: ' + tongDiem);
+				break;
+				
+		
+		}
+		
+		}else{
+			document.getElementById('diem').innerHTML = ('Moi ban nhap lai so diem');
+
+		}
+		}
+	</script>
+</body>
+</html>

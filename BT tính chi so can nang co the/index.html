@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-eqhiv="X-UA_Compartible" content="IE=egde">
+	<meta name="viewport" content="width=device, initial-scale=1.0">
+	<title> Tinh chi so can nang co the </title>
+</head>
+<body>
+
+	<h1> Tinh chi so can nang </h1><br>
+	<table>
+		<tr>
+			<td>Can nang </td>
+			<td><input type="text" id="canNang" ></td>
+			<td>kg</td>
+		</tr>
+		<tr>
+			<td>Chieu cao</td>
+			<td><input type="text" id="chieuCao" ></td>
+			<td>m</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button id="ketQua"> Ket Qua </button></td>
+			<td></td>
+		</tr>
+	</table>
+	<br>
+	<h2><div id="hienThi"></div></h2>
+	
+	<script>
+		let canNang = document.getElementById('canNang');
+		let chieuCao = document.getElementById('chieuCao');
+		let ketQua = document.getElementById('ketQua');
+		ketQua.addEventListener('click', function (){
+		if (canNang.value == '' ||chieuCao.value==''){
+			document.getElementById('hienThi').innerHTML = ("Moi ban nhap vao chieu cao va can nang");
+			
+		}else{
+		let cn = parseFloat(canNang.value);
+		let cc = parseFloat(chieuCao.value);
+		let bmi = cn/cc/cc;
+			if (bmi > 40) {
+				document.getElementById('hienThi').innerHTML = ("BMI = " + bmi + ". Ban beo phi do III");
+			}else if (35<=bmi){
+					document.getElementById('hienThi').innerHTML = ("BMI = " + bmi + ". Ban beo phi do II");
+				}else if (30<=bmi){
+						document.getElementById('hienThi').innerHTML = ("BMI = " + bmi + ". Ban beo phi do I");
+					}else if(25<=bmi){
+							document.getElementById('hienThi').innerHTML = ("BMI = " + bmi + ". Ban dang thua can");
+						}else if(18.5<=bmi){
+								document.getElementById('hienThi').innerHTML = ("BMI = " + bmi + ". Chi so cua ban binh thuong");
+							}else if(17<=bmi){
+									document.getElementById('hienThi').innerHTML = ("BMI = " + bmi + ". Ban gay do I");
+								}else if(16<=bmi){
+										document.getElementById('hienThi').innerHTML = ("BMI = " + bmi + ". Ban gay do II");
+									}else {
+											document.getElementById('hienThi').innerHTML = ("BMI = " + bmi + ". Ban gay do III");
+											}
+		}
+		})
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài thực hành 1</title>
+</head>
+<body>
+    <h1>What is the "official" name of JavaScript?</h1>
+    <input type="text" name="" id="dapAn">
+    <input type="button" onclick="kiemTra()" value="Check">
+    <div id="traLoi"></div>
+    <script>
+        function kiemTra(){
+        let input = document.getElementById('dapAn').value;
+        if (input == 'ECMAscript'){
+            document.getElementById('traLoi').innerHTML=("<h1>Right!</h1>")
+        }else{
+            document.getElementById('traLoi').innerHTML=("<h1>You don't know? ECMAScript!</h1>")
+        }
+    }
+    </script>
+    <!--<script>
+    let officialName = 'ECMAScript';
+    let guess = prompt('What is the "official" name of JavaScript?', '');
+    if (guess == officialName) {
+        alert('Right!');
+      } else {
+        alert("You don't know? ECMAScript!");
+      }
+    </script>-->
+</body>
+</html>

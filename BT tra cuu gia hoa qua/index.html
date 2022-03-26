@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-eqhiv="X-UA_Compartible" content="IE=egde">
+	<meta name="viewport" content="width=device, initial-scale=1.0">
+	<title> Tra cuu gia hoa qua </title>
+</head>
+<body>
+	<!-- Cach 1
+	<h1> Gia hoa qua </h1>
+	<input type="text" id="loaiQua">
+	<input type="button" id="check" value="Tra gia" onclick="check()">
+	<br>
+	<br>
+	<h1><div id="hienGia"></div></h1>
+	
+	<script>
+		let input = document.getElementById('loaiQua');
+		let giaOi = '20.000';
+		let giaDuaHau = '20.000';
+		let giaTao = '20.000';
+		let giaChomchom = '40.000';
+		let giaXoai = '30.000';
+		let giaCam = '40.000';
+		let giaMangCut = '50.000';
+		function check(){
+		switch (input.value) {
+			case "oi":
+				document.getElementById('hienGia').innerHTML = (giaOi + " VND/kg");
+				break;
+			case "dua hau":
+				document.getElementById('hienGia').innerHTML = (giaDuaHau + " VND/kg");
+				break;
+			case "tao":
+				document.getElementById('hienGia').innerHTML = (giaTao + " VND/kg");
+				break;
+			case "xoai":
+				document.getElementById('hienGia').innerHTML = (giaXoai + " VND/kg");
+				break;
+			case "cam":
+				document.getElementById('hienGia').innerHTML = (giaCam + " VND/kg");
+				break;
+			case "chom chom":
+				document.getElementById('hienGia').innerHTML = (giaChomchom + " VND/kg");
+				break;
+			case "mang cut":
+				document.getElementById('hienGia').innerHTML = (giaMangCut + " VND/kg");
+				break;
+		}
+		}
+	</script>
+	-->
+	<!-- Cach 2
+	<h1> Gia hoa qua </h1>
+	<select id="giaQua" style="width:150px;">
+		<option class="loaiQua" value="oi"> Oi</option>
+		<option class="loaiQua" value="tao"> Tao</option>
+		<option class="loaiQua" value="dua hau">Dua Hau</option>
+		<option class="loaiQua" value="cam"> Cam</option>
+		<option class="loaiQua" value="xoai"> Xoai</option>
+		<option class="loaiQua" value="chom chom"> Chom Chom</option>
+		<option class="loaiQua" value="mang cut"> Mang Cut</option>
+	</select>
+	<input type="button" id="check" value="Xem gia" onclick="check()">
+	<br>
+	<br>
+	<h1><div id="hienGia"></div></h1>
+	
+	<script>
+		let input = document.getElementById('giaQua');
+		let giaOi = '20.000 VND/kg';
+		let giaDuaHau = '20.000 VND/kg';
+		let giaTao = '20.000 VND/kg';
+		let giaChomchom = '40.000 VND/kg';
+		let giaXoai = '30.000 VND/kg';
+		let giaCam = '40.000 VND/kg';
+		let giaMangCut = '50.000 VND/kg';
+		function check(){
+		switch (input.value) {
+			case "oi":
+				document.getElementById('hienGia').innerHTML = giaOi;
+				break;
+			case "dua hau":
+				document.getElementById('hienGia').innerHTML = giaDuaHau;
+				break;
+			case "tao":
+				document.getElementById('hienGia').innerHTML = giaTao;
+				break;
+			case "xoai":
+				document.getElementById('hienGia').innerHTML = giaXoai;
+				break;
+			case "cam":
+				document.getElementById('hienGia').innerHTML = giaCam;
+				break;
+			case "chom chom":
+				document.getElementById('hienGia').innerHTML = giaChomchom;
+				break;
+			case "mang cut":
+				document.getElementById('hienGia').innerHTML = giaMangCut;
+				break;
+		}
+		}
+	</script>-->
+
+	Cach 3
+	<div class="container">
+		<input type="text" onkeyup="checkPrice(this)" placeholder="Tìm kiếm giá hoa quả ">
+		<br><br>
+		<span id="result"></span>
+	</div>
+	<script>
+		let result = document.getElementById('result');
+		let output;
+		function checkPrice(obj){
+			let fruitName = obj.value.toLowerCase();
+			switch (true){
+				case(fruitName == 'oi'||fruitName =='ổi'):
+				case(fruitName =='dua hau'||fruitName =='dưa hấu'):
+					output = '20.000 VND/kg';
+					break;
+				case(fruitName == 'tao'||fruitName =='táo'):
+				case(fruitName =='xoai'||fruitName =='xoài'):
+					output = '30.000 VND/kg';
+					break;
+				case(fruitName == 'cam'):
+				case(fruitName =='chom chom'||fruitName =='chôm chôm'):
+					output = '40.000 VND/kg';
+					break;
+				case(fruitName =='mang cut'||fruitName =='măng cụt'):
+					output = '50.000 VND/kg';
+					break;
+				default:
+					output: 'Không tìm thấy loại quả này';
+					break;
+			}
+			result.innerText = output;
+		}
+	</script>
+</body>
+</html>

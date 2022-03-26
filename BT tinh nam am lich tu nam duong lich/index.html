@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-eqhiv="X-UA_Compartible" content="IE=egde">
+	<meta name="viewport" content="width=device, initial-scale=1.0">
+	<title> Tinh nam am lich tu nam duong lich </title>
+</head>
+<body>
+
+	<h1> Moi ban nhap nam muon tra cuu </h1><br>
+	<input type="text" id="namDuongLich" ><br><br>
+	<input type="button" id="traCuu" value="TRA CUU"><br>
+	<h2><div id="hienThi"></div></h2>
+	
+	<script>
+		let nam = document.getElementById('namDuongLich');
+		let traCuu = document.getElementById('traCuu');
+		traCuu.addEventListener('click', function (){
+		if (nam.value != ''){
+		let checkCan = nam.value%10;
+		let checkChi = nam.value%12;
+		let can = '';
+		let chi = '';
+			switch (checkCan){
+				case 1:
+					can = 'Canh';
+					break;
+				case 2:
+					can = 'Nham';
+					break;
+				case 3:
+					can = 'Quy';
+					break;
+				case 4:
+					can = 'Giap';
+					break;
+				case 5:
+					can = 'At';
+					break;
+				case 6:
+					can = 'Binh';
+					break;
+				case 7:
+					can = 'Dinh';
+					break;
+				case 8:
+					can = 'Mau';
+					break;
+				case 9:
+					can = 'Ky';
+					break;
+				case 0:
+					can = 'Canh';
+					break;
+				}
+			switch (checkChi){
+				case 1:
+					chi = 'Dau';
+					break;
+				case 2:
+					chi = 'Tuat';
+					break;
+				case 3:
+					chi = 'Hoi';
+					break;
+				case 4:
+					chi = 'Ty';
+					break;
+				case 5:
+					chi = 'Suu';
+					break;
+				case 6:
+					chi = 'Dan';
+					break;
+				case 7:
+					chi = 'Mao';
+					break;
+				case 8:
+					chi = 'Thin';
+					break;
+				case 9:
+					chi = 'Ty';
+					break;
+				case 10:
+					chi = 'Ngo';
+					break;
+				case 11:
+					chi = 'Mui';
+					break;
+				case 0:
+					chi = 'Than';
+					break;
+				}
+				
+				document.getElementById('hienThi').innerHTML = ("Nam "+ nam.value +" la nam " + can+ ' ' + chi);
+		
+		}else{
+				document.getElementById('hienThi').innerHTML = ("Moi ban nhap nam");
+		}
+		})
+	</script>
+	
+</body>
+</html>
